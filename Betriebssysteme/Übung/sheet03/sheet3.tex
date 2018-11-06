@@ -1,0 +1,152 @@
+\input{content/0-Kopfzeile}
+\section*{Übungsblatt 3}
+\addcontentsline{toc}{section}{\protect\numberline{}Übungsblatt 3}
+\setcounter{section}{1}
+
+\subsection*{Aufgabe 5}
+
+Aufgaben eines Betriebssystems
+\begin{itemize}
+  \item Programme für bestimmte Anwendungszwecke ausführen
+  \item Steuerung von Maschinen/Automaten oder sonstigen Systemen
+  \item Speicherverwaltung
+  \item Prozessverwaltung 
+  \item Geräte- Dateiverwaltung
+  \item Schnittstelle zwischen Hard- und Software
+\end{itemize}
+
+Arten von Betriebssystemen:
+\begin{enumerate}
+  \item Echtzeitbetriebssysteme
+  \begin{itemize}
+    \item kernel übernimmt scheduling von Prozessen
+    \item Echtzeit-Prozesse haben höchste Priorität, um minimale Latenzzeiten zu erreichen
+  \end{itemize}
+  \textbf{Vor- und Nachteile}\\
+  \begin{minipage}[t]{0.45\textwidth}
+    \begin{itemize}[label=\ensuremath{+}]
+    \item kritische Anwendungsbereiche, wo es auf sehr präzises Timing und Zuverlässigkeit ankommt, können damit bedient werden
+    \item bieten dem Programmierer große Kontrolle über Priorisierung der Tasks 
+    \end{itemize}
+    \end{minipage}
+    %
+    \hfill
+    %
+    \begin{minipage}[t]{0.45\textwidth}
+    \begin{itemize}[label=\ensuremath{-}]
+    \item können nur begrenzte Zahl an Programmen gleichzeitig ausführen (aber dadurch auch weniger Overhead)
+    \item Lizenzkosten
+    \item erhöhter Aufwand bei Einarbeitung
+    \end{itemize}
+  \end{minipage}
+  \item allgemeine Betriebssysteme
+    \begin{itemize}
+      \item kernel ist in Schichten unterteilt, die die obigen Aufgaben übernimmt.
+    \end{itemize}
+    \textbf{Vor- und Nachteile}\\
+    \begin{minipage}[t]{0.45\textwidth}
+      \begin{itemize}[label=\ensuremath{+}]
+      \item (meist) Benutzerfreundlich, da weit verbreitet
+      \item Einarbeitung/Trainingsaufwand gering
+      \item Multi-Tasking fähig -> hohe Geschwindigkeit -> Overhead vernachlässigbar
+      \end{itemize}
+      \end{minipage}
+      %
+      \hfill
+      %
+      \begin{minipage}[t]{0.45\textwidth}
+      \begin{itemize}[label=\ensuremath{-}]
+      \item je nach Kernel führen fehlerhafte Komponenten zu Systemabstürzen
+      \item wenig flexibel $ \rightarrow $ hoher Entwicklungsaufwand
+      \item Kernelfehler bringen das komplette System zum Absturz, wenn nicht modular
+      \end{itemize}
+    \end{minipage}
+\end{enumerate}
+
+\subsection*{Aufgabe 6}
+
+\begin{enumerate}
+  \item monolithische Kernel
+    \begin{itemize}
+      \item Funktionen für Speicher- und Prozessverwaltung
+      \item Funktionen für Prozesskommunikation
+      \item Hardware- und Dateisystem-Treiber
+    \end{itemize}
+    \textbf{Vor- und Nachteile}\\
+    \begin{minipage}[t]{0.45\textwidth}
+      \begin{itemize}[label=\ensuremath{+}]
+      \item weniger Prozesswechsel $ \rightarrow $ hoehere Geschwindigkeit
+      \item Stabil
+      \end{itemize}
+      \end{minipage}
+      %
+      \hfill
+      %
+      \begin{minipage}[t]{0.45\textwidth}
+      \begin{itemize}[label=\ensuremath{-}]
+      \item abgestuerzte Komponenten koennen nicht separat neu gestartet werden
+      \item wenig flexibel $ \rightarrow $ hoher Entwicklungsaufwand
+      \item Kernelfehler bringen das komplette System zum Absturz
+      \end{itemize}
+    \end{minipage}
+  \item mikro Kernel
+    \begin{itemize}
+        \item notwendigste Funktionen für Speicher- und Prozessverwaltung
+        \item Funktionen zur Synchronisation und Interprozesskommunikation
+      \end{itemize}
+      \textbf{Vor- und Nachteile}\\
+      \begin{minipage}[t]{0.45\textwidth}
+        \begin{itemize}[label=\ensuremath{+}]
+        \item einfache Austauschbarkeit der Komponenten
+        \item beste Stabilitaet und Sicherheit, da weniger Funktionen im Kernelmodus
+        \end{itemize}
+        \end{minipage}
+        %
+        \hfill
+        %
+        \begin{minipage}[t]{0.45\textwidth}
+        \begin{itemize}[label=\ensuremath{-}]
+        \item hohe Prozesswechsel $ \rightarrow $ mehr Overhead $ \rightarrow $ langsamer
+        \item hoher Entwicklungsaufwand, da komplex
+        \end{itemize}
+      \end{minipage}
+  \item hybride Kernel
+    \begin{itemize}
+        \item Funktionen für Speicher- und Prozessverwaltung
+        \item Funktionen für Interprozesskommunikation
+        \item Hardware-Treiber
+        \item weitere Komponenten moeglich
+      \end{itemize}
+      \textbf{Vor- und Nachteile}\\
+      \begin{minipage}[t]{0.45\textwidth}
+        \begin{itemize}[label=\ensuremath{+}]
+        \item Steigerung der Performance
+        \end{itemize}
+        \end{minipage}
+        %
+        \hfill
+        %
+        \begin{minipage}[t]{0.45\textwidth}
+        \begin{itemize}[label=\ensuremath{-}]
+        \item fehlerhafte Grafiktreiber fuehren zu haeufigen Abstuerzen
+        \end{itemize}
+      \end{minipage}
+\end{enumerate}
+
+\subsection*{Aufgabe 7}
+
+Der Prozess für das Programm kate läuft im user mode, welcher nur mit virtuellem Speicher arbeitet. Bei Aufruf der Funktion $ Speichern $ bzw. $ ssize \_ twrite $ erfolgt ein $ syscall $ an den $ kernel $ , da ein Schreibprozess auf den physischen Speicher erfolgen soll. D.h. es soll kurzzeitig ein Moduswechsel von $ user mode $ zu $ kernel mode $ erfolgen. Der $ kernel $ unterbricht mittels eines $ software $ $ interrupts $ die Anwendung im $ user mode $ und führt dann den $ syscall $ mit den entsprechenden Parametern aus. Der $ kernel $ gibt die Kontrolle an den Prozess im $ user mode $ zurück und der Anwender fährt fort.
+
+\subsection*{Aufgabe 8}
+
+Nachteil Bitfelder: keine Adressen zu Bitfelder, langsamer, Computerarchitekturabhängig\\
+Code s. Anhang oder auf Github: \begin{center}
+  \url{https://goo.gl/YaaT3E}
+\end{center} 
+
+\newpage
+
+
+
+
+
