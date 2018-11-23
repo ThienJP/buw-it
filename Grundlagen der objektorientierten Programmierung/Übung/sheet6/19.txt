@@ -1,13 +1,13 @@
 a) 
 
 X
-1. x += y; return type X&
+1. x += y; return type X
 2. x + y; return type Y
 
 Y
 1. x1 + x2; return type X
-2. y1 += y2; return type Y&
-3. cout << y; return type os
+2. y1 += y2; return type Y
+3. cout << y; return type ostream
 
 b)
 Memberfunktion:
