@@ -10,7 +10,7 @@ OBJ			= flug.o
 # $@, $^ left and right sides of the :
 # compile all .c files including the header files to object files
 %.o: %.c $(DEPS)
-		$(CC) $(CFLAGS) -c -o $@
+		$(CC) $(CFLAGS) -c $<
 
 # link all object files together and name the output file main_make
 flug: $(OBJ)
