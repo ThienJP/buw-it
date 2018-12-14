@@ -5,6 +5,16 @@
 /* Datum: 13.12.2018 */
 /****************************************/
 
+/*
+ *  Fahrzeug -> KFZ -> PKW
+ *     |            -> LKW
+ *     v
+ *    Fahrrad
+ *
+ *  PKW und LKW erben von KFZ, KFZ und Fahrrad erben von Fahrzeug,
+ *  Fahrzeug ist Oberklasse von allen
+ */
+
  /*
  * ausgegebene Anzahl weicht ab, da in Z. 110 das Objekt kopiert wird und nicht der ctor fuer Fahrzeug neu aufgerufen wird
  * Man muesste einen copy-ctor fuer Fahrzeug anlegen, der ein Objekt der Klasse Fahrzeug uebergeben bekommt.

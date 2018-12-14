@@ -5,11 +5,12 @@
 /* Datum: 13.12.2018 */
 /****************************************/
 
-
 #include <iostream>
 #include <cmath>
 
 using namespace std;
+
+const double pi = 3.14159265358979323846;
 
 template<typename T, typename R> class Kreis {
 	private:
@@ -37,8 +38,8 @@ template<typename T, typename R> class Kreis {
 		T getY() const {return m_y;}
 		R getRad() const {return rad;}
 
-		R berechne_flaecheninhalt();
-		R berechne_umfang();
+		auto berechne_flaecheninhalt();
+		auto berechne_umfang();
 		bool schneidet(const Kreis<T, R>& k2);
 };
 
@@ -60,13 +61,13 @@ ostream& operator<<(ostream& os, const Kreis<T, R>& k) {
 	return os;
 }
 template <typename T, typename R>
-R Kreis<T,R>::berechne_flaecheninhalt() {
-	return 3.14 * (rad * rad);
+auto Kreis<T,R>::berechne_flaecheninhalt() {
+	return pi * pow(rad, 2);
 }
 
 template <typename T, typename R>
-R Kreis<T, R>::berechne_umfang() {
-  return 2 * 3.14 * rad;
+auto Kreis<T, R>::berechne_umfang() {
+  return 2 * pi * rad;
 }
 
 template <typename T, typename R>
@@ -80,14 +81,15 @@ bool Kreis<T, R>::schneidet(const Kreis<T, R>& k2) {
     max_r = k2.rad;
   }
 
-  distance = sqrt( (m_x - k2.m_x) * (m_x - k2.m_x) + (m_y - k2.m_y) * (m_y - k2.m_y) );
+  // pythagoras sqrt (x1-x2)^2 + (y1 - y2)^2
+  distance = sqrt( pow(m_x - k2.m_x, 2) + pow(m_y - k2.m_y, 2) );
 
   /*
-   * if distance between both circles < radius of larger circle then intersect == true
+   * if distance between both circles <= radius of larger circle then intersect == true
    */
-  if (distance < max_r ) {
+  if (distance <= max_r ) {
     return true;
-  } else if (distance >= max_r) {
+  } else if (distance > max_r) {
       return false;
   }
 }
