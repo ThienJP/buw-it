@@ -1,0 +1,20 @@
+1. 
+
+int k = 8;
+int i = k++;
+hier wird der aktuelle Wert von k dem i zugewiesen, d.h.
+i = 8.
+anschließend wird k um 1 inkrementiert, d.h. k = 9.
+
+int j = ++k;
+hier wird zuerst k um 1 inkrementiert und dann j zugewiesen, d.h. k= 10, j = 10
+
+am Ende ist also:
+b) i = 8, j = 10, k = 10.
+
+2. ja
+
+3. nein
+
+4. b) heap ist richtig, auf dem stack werden parameter/variablen s. Assembler gepusht, auf der Festplatte befindet sich nur die binary
+
