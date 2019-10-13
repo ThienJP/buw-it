@@ -1,0 +1,20 @@
+a)
+
+1. ja
+2. ja, da sie nur einmal für die ganze Klasse existieren
+3. nein, ctor/dtor haben gar keinen Rueckgabetyp
+4. nein, es gibt Standard Copy/Zuweisungsoperatoren
+
+b)
+
+a mit Parameterliste im Konstruktor initalisieren, d.h. 
+
+class X {
+private:
+  const int a;
+
+public:
+  X(int wert) : a(wert) {
+  
+  }
+}

@@ -1,0 +1,13 @@
+a)
+ist langsamer, da die Parameter erst auf den Stack gepusht werden muessen und anschließend der Stack gesichert, Berechnung durchgeführt, Ergebnisregister sichern, Stack wiederhergestellt, das gesicherte Ergebnisregister wiederhergestellt und zum Hauptprogramm returned werden muss.
+
+Lösen kann man das ganze mit der inline Anweisung.
+
+b)
+
+1. hängt von der Vererbung ab, s. Skript 3.3 Zugriffsrechte bei Vererbung.
+Ich betrachte den Fall, dass public-Vererbung vorliegt, wie in meinem Codo von Aufgabe 28:
+- falsch, kann auch auf public Elemente zugreifen, nicht aber auf private.
+2. wahr
+3. wahr 
+4. falsch
