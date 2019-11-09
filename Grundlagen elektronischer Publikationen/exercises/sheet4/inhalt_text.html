@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+                      "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Uebung 03 | Inhaltsverzeichnis (Text)</title>
+    </head>
+
+    <style type="text/css">
+        code {
+            font-size: 16px;
+        }
+
+        table.t1 {
+            width: 80%;
+            border: hidden;
+            padding: 10px;
+            border-spacing: 5px;
+            border-collapse: collapse;
+        }
+        .t1 th {
+            border-right: 1px solid;
+            padding: 10px;
+        }
+        #subh {
+            font-weight: normal;
+
+        }
+        table.t1 td {
+            border-right: 1px solid;
+            padding: 10px;
+        }
+        table.t1 td:first-child {
+            text-align: right;
+            border-left: none;
+        }
+        table.t1 td:last-child th:last-child{
+            border-right: none;
+        }
+
+
+        table.t2 {
+            width: 80%;
+            border: 1px solid black;
+            border-collapse: collapse;
+
+        }
+        .t2 th {
+            background-color: lightgray;
+            vertical-align: middle;
+            border-left: 1px solid black;
+            border: 1px solid black;
+            height: 50px;
+        }
+        .t2 td {
+            border: 1px solid black;
+            height: 40px;
+            padding: 10px;
+        }
+        .subh {
+            font-weight: normal;
+            border-top: 1px solid black;
+        }
+
+
+    </style>
+
+    <body>
+        <!-- Inhaltsverzeichnis -->
+        <div id="toc">
+            <h1 style="background-color:#CCCCCC">Inhaltsverzeichnis</h1>
+            <ol type="I">
+                <li>Teil</li>
+                    <ul>
+                        <li><a href="Rezept_01/rezept_01.html">Falafel</a></li>
+                        <li><a href="Rezept_02/rezept_02.html">Rotes Thai-Curry</a></li>
+                        <li><a href="Rezept_03/rezept_03.html">T&uuml;rkische Linsensuppe</a></li>
+                    </ul>
+                <li>Teil</li>
+                    <ul>
+                        <li><a href="glossar.html">Glossar</a></li>
+                    </ul>
+            </ol>
+        </div>
+        <div class="table_ex2j">
+            <table class="t2">
+                <caption>
+                    <h1>Maskierung HTML-eigener Zeichen</h1>
+                </caption>
+                <thead>
+                <tr>
+                    <th rowspan="2">Zeichen</th>
+                    <th rowspan="2">Beschreibung</th>
+                    <th colspan="3">Zeichenreferenz</th>
+                </tr>
+                <tr>
+                    <th class="subh">Name in HTML</th>
+                    <th class="subh">NCR hex.</th>
+                    <th class="subh">NCR dez.</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>"</td>
+                        <td>Anführungszeichen oben</td>
+                        <td><code>&amp;quot;</code> </td>
+                        <td><code>&amp;#x22;</code></td>
+                        <td><code>&amp;#34;</code></td>
+                    </tr>
+                    <tr>
+                        <td>&</td>
+                        <td>Amersand Zeichen, kaufmännisches Und</td>
+                        <td><code>&amp;amp;</code></td>
+                        <td><code>&amp;#x26;</code></td>
+                        <td><code>&amp;#38;</code></td>
+                    </tr>
+                    <tr>
+                        <td><</td>
+                        <td>öffnende spitze Klammer</td>
+                        <td><code>&amp;lt;</code></td>
+                        <td><code>&amp;#x3C;</code></td>
+                        <td><code>&amp;#60;</code></td>
+                    </tr>
+                    <tr>
+                        <td>></td>
+                        <td>schließende spitze Klammer</td>
+                        <td><code>&amp;gt;</code></td>
+                        <td><code>&amp;#x3E;<</code>/td>
+                        <td><code>&amp;#62;</code></td>
+                    </tr>
+                    <tr>
+                        <td>'</td>
+                        <td>Apostroph, einfaches Anführungszeichen oben</td>
+                        <td><code>&amp;pos;</code></td>
+                        <td><code>&amp;#x27;</code></td>
+                        <td><code>&amp;#39;</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table_ex2">
+            <table class="t1">
+                <caption>
+                    <h1>Maskierung HTML-eigener Zeichen</h1>
+                </caption>
+                <thead>
+                <tr>
+                    <th rowspan="2">Zeichen</th>
+                    <th rowspan="2">Beschreibung</th>
+                    <th colspan="3">Zeichenreferenz</th>
+                </tr>
+                <tr>
+                    <th id="subh">Name in HTML</th>
+                    <th id="subh">NCR hex.</th>
+                    <th id="subh">NCR dez.</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>"</td>
+                        <td>Anführungszeichen oben</td>
+                        <td><code>&amp;quot;</code> </td>
+                        <td><code>&amp;#x22;</code></td>
+                        <td><code>&amp;#34;</code></td>
+                    </tr>
+                    <tr>
+                        <td>&</td>
+                        <td>Amersand Zeichen, kaufmännisches Und</td>
+                        <td><code>&amp;amp;</code></td>
+                        <td><code>&amp;#x26;</code></td>
+                        <td><code>&amp;#38;</code></td>
+                    </tr>
+                    <tr>
+                        <td><</td>
+                        <td>öffnende spitze Klammer</td>
+                        <td><code>&amp;lt;</code></td>
+                        <td><code>&amp;#x3C;</code></td>
+                        <td><code>&amp;#60;</code></td>
+                    </tr>
+                    <tr>
+                        <td>></td>
+                        <td>schließende spitze Klammer</td>
+                        <td><code>&amp;gt;</code></td>
+                        <td><code>&amp;#x3E;<</code>/td>
+                        <td><code>&amp;#62;</code></td>
+                    </tr>
+                    <tr>
+                        <td>'</td>
+                        <td>Apostroph, einfaches Anführungszeichen oben</td>
+                        <td><code>&amp;pos;</code></td>
+                        <td><code>&amp;#x27;</code></td>
+                        <td><code>&amp;#39;</code></td>
+                    </tr>
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+                      "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Uebung 03 | Inhaltsverzeichnis (Image Map)</title>
+    </head>
+    <body>
+        <!-- Inhaltsverzeichnis -->
+        <div id="toc">
+            <h1 style="background-color:#CCCCCC">Inhalt</h1>
+            <!-- Hinweis: 
+                
+                Der Verweis auf die Image Map via @usemap sowie die Image Map selbst sind gemäß W3C-Spezifikation für XHTML 1.1 
+                ausgezeichnet (vgl. https://www.w3.org/TR/xhtml-modularization/abstract_modules.html#s_imapmodule). Dies führt 
+                u.U. zu Funktionalitätsproblemen in einzelnen Browsern.
+                
+                Getestet für:
+                - Firefox       Image Map ist funktionsfähig
+                - Chrome        Image Map ist NICHT funktionsfähig (Workaround (NICHT W3C-konform): Verwendung von @name anstelle von @id im Element <map>)
+            -->
+            <img src="inhalt.jpg" alt="Inhaltsverzeichnis als Image Map" usemap="#inhalt"/>
+            <map id="inhalt">
+                <!-- Kreis mit den Angaben: x=394, y=169, r=65 -->
+                <area shape="circle" coords="394, 169, 65" alt="Thai-Curry" href="Rezept_02/rezept_02.html"/>
+                <!-- Quadrat mit den Angaben: x1=478, y1=265, x2=698, y2=485 -->
+                <area shape="rect" coords="478, 265, 698, 485" alt="Linsensuppe" href="Rezept_03/rezept_03.html"/>
+                <!-- Polygon mit den Angaben: x1=68, y1=258, x2=285, y2=216, x3=327, y3=432, x4=111, y4=475 -->
+                <area shape="poly" coords="68, 258, 285, 216, 327, 432, 111, 475" alt="Falafel" href="Rezept_01/rezept_01.html"/>
+            </map>
+        </div>
+    </body>
+</html>
